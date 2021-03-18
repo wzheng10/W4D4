@@ -13,9 +13,13 @@ describe Array do
     end
 
     describe "#two_sum" do
+        arr = Array.new([-1,0,2,-2,1])
+        it 'should return an array of positions' do
+           expect(arr.two_sum).to eq([])
+        end
         it "returns pairs of positions sum = 0" do
-            arr = Array.new([-1,0,2,-2,1])
-            expect(arr.two_sum).to eq([[0,4][2,3]])
+           
+            expect(arr.two_sum).to match_array([[0,4],[2,3]])
         end
 
     end

@@ -12,9 +12,10 @@ class Array
     
     def two_sum
         pairs = []
-        self.each_with_index do |ele, i|
-            self.each_with_index do |ele2, i2|
-                pairs << [i,i2] if self[ele] + self[ele2] == 0
+        (0...self.length).each do |i|
+            (i...self.length).each do |i2|
+        pairs << [i,i2] if self[i] + self[i2] == 0 && self[i] != 0
+                
             end
         end
         pairs
