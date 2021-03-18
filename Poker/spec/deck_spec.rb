@@ -1,1 +1,1 @@
-require deck
+require 'deck'
