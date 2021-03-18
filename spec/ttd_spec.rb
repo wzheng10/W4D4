@@ -25,22 +25,23 @@ describe Array do
     end
 
     context "#my_transpose" do
-        let(rows) {[
+        rows = [
                 [0, 1, 2],
                 [3, 4, 5],
                 [6, 7, 8]
-                ]}
-        let(cols) {[
+                ]
+        cols =  [
                 [0, 3, 6],
                 [1, 4, 7],
                 [2, 5, 8]
-                ]}
+                ]
 
         it "returns row in col" do
             expect(rows.my_transpose).to eq(cols)
         end
         it "should not use built-in Array#transpose" do
             expect(rows).not_to receive(:transpose)
+            rows.my_transpose
         end
     end
 end
