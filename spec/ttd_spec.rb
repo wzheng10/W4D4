@@ -5,11 +5,19 @@ require 'ttd.rb'
 #take an array and return ele in the order they appear
 describe Array do
 
-    subject(:arr) {Array.new([1, 2, 1, 3, 3])}
     describe '#uniq' do
         it 'return all unique elements in an array' do
-            expect(:arr).to eq([1, 2, 3])
+                arr =  Array.new([1, 2, 1, 3, 3])
+                expect(arr.my_uniq).to eq([1, 2, 3]) 
         end
+    end
+
+    describe "#two_sum" do
+        it "returns pairs of positions sum = 0" do
+            arr = Array.new([-1,0,2,-2,1])
+            expect(arr.two_sum).to eq([[0,4][2,3]])
+        end
+
     end
 
 end
