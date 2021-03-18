@@ -25,20 +25,43 @@ describe Array do
     end
 
     context "#my_transpose" do
-        rows = [
+        let(rows) {[
                 [0, 1, 2],
                 [3, 4, 5],
                 [6, 7, 8]
-                ]
-        cols = [
+                ]}
+        let(cols) {[
                 [0, 3, 6],
                 [1, 4, 7],
                 [2, 5, 8]
-                ]
+                ]}
 
         it "returns row in col" do
             expect(rows.my_transpose).to eq(cols)
         end
-        it "should not use built-in .transpose"
+        it "should not use built-in Array#transpose" do
+            expect(rows).not_to receive(:transpose)
+        end
     end
 end
+
+# describe "product_inject" do
+#     it "should accept an array of numbers as an arg" do
+#       expect { product_inject([4, 2, 5]) }.to_not raise_error
+#     end
+
+#     it "should return the total product of all elements multiplied together" do
+#       expect(product_inject([4, 2, 5])).to eq(40)
+#       expect(product_inject([4, 2, 5, 3])).to eq(120)
+#       expect(product_inject([7, 2])).to eq(14)
+#       expect(product_inject([3])).to eq(3)
+#     end
+
+#     it "should use Array#inject on the array to calculate the answer" do
+#       answer = double("the answer")
+#       array = [4, 2, 5]
+#       allow(array).to receive(:inject).and_return(answer)
+#       expect(product_inject(array)).to be(answer)
+#     end
+#   end
+# end

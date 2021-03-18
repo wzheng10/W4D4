@@ -20,7 +20,15 @@ class Array
         end
         pairs
     end
+
+    def my_transpose
+        
+    end
 end
+
+# def product_inject(array)
+#     array.inject {}
+# end
 
 
 #    ([-1,0,2,-2,1])
